@@ -11,9 +11,7 @@ public class FileReader {
     public Profile getDataFromFile(File file) {
             List<String> profiles = new ArrayList<>();
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            BufferedReader bufferedReader = new BufferedReader(new java.io.FileReader(file));
             String row;
             int i = 0;
             while ((row = Objects.requireNonNull(bufferedReader).readLine()) != null){
