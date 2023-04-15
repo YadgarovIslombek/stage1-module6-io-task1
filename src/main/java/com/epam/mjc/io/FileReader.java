@@ -3,6 +3,7 @@ package com.epam.mjc.io;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class FileReader {
@@ -15,12 +16,12 @@ public class FileReader {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String row;
             int i = 0;
-            while ((row=bufferedReader.readLine())!= null){
+            while ((row = Objects.requireNonNull(bufferedReader).readLine()) != null){
                 String[] s = row.split(" ");
 //                Profile profile = new Profile(s[0],Integer.parseInt(s[1]),s[2],Long.parseLong(s[3]));
 //                profiles.add(profile);
 
-                profiles.add(i,s[0]);
+                profiles.add(i,s[1]);
                 i++;
             }
             bufferedReader.close();
