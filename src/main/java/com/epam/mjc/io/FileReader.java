@@ -23,7 +23,6 @@ public class FileReader {
                 i++;
             }
             bufferedReader.close();
-            System.out.println(profiles);
         } catch (Exception e) {
             System.out.println(e.getMessage());;
         }
